@@ -26,7 +26,8 @@ function setGridsize() {
                 divs[i,j].style.height = `${100/size}%`;
 
                 divs[i,j].addEventListener("mouseover", (e) => {
-                    e.target.style.backgroundColor = currentColor;
+                    e.target.style.backgroundColor = currentColor ?? `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
+                    //null currentColor is how the "random" color selection is indicated
                 })
                 container.appendChild(divs[i,j]);
             }

@@ -11,6 +11,17 @@
 <body>
     <div id="UI-container">
         <button id="gridsize">Change Grid Size</button>
+        <div id="color-select">
+            <input type="radio" name="colors" id="black" checked onclick="currentColor = 'black'">
+            <label for="black">Black</label>
+            
+            <input type="radio" name="colors" id="random" onclick="currentColor = null">
+            <label for="random">Random</label>
+            
+            <input type="radio" name="colors" id="erase" onclick="currentColor = 'beige'">
+            <label for="erase">Erase</label>
+            
+        </div>
     </div>
     <div id="container">
 
