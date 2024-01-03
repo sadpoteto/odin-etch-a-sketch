@@ -11,10 +11,10 @@ let currentColor = "black";
 function setGridsize() {
     while(1) {
         let input = prompt("Enter grid size (1~100): ", size);
-        if(input === "") break;
+        if(input == null) break;
         input = parseInt(input);
         if(isNaN(input)) continue;
-        size = input;
+        size = (input <= 100) ? input : 100;
         container.textContent = "";
         //replaces all children with a #text node, faster than emptying 
         //innerHTML through the browser's parser
@@ -27,7 +27,6 @@ function setGridsize() {
 
                 divs[i,j].addEventListener("mouseover", (e) => {
                     e.target.style.backgroundColor = currentColor;
-                    console.log("hey")
                 })
                 container.appendChild(divs[i,j]);
             }
